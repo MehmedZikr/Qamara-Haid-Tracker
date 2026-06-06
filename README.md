@@ -1,32 +1,39 @@
-# Qamara - Tracker Haid + AI Agent
+# Qamara - Period Tracker PWA
 
-Qamara adalah starter aplikasi tracker menstruasi/haid bernuansa feminin-elegan, dengan logo yang sudah disiapkan dari aset pengguna.
+Qamara adalah aplikasi tracker haid dengan desain feminin, prediksi siklus, masa subur, mood & symptom tracker, AI Agent edukatif, PWA, cloud database opsional, dan footer dedikasi khusus.
 
-## Fitur MVP
-- Logo versi App Store / Play Store di folder `public/icons`
-- Splash assets di `public/assets`
-- Onboarding screen
-- UI/UX pink-feminine ala health tracker modern
-- Dashboard kesehatan wanita
-- Prediksi siklus haid dan masa subur
-- Mood tracker dan symptom tracker
-- AI Agent edukatif lokal berbasis rule
-- Reminder/notifikasi browser
-- Data lokal di `localStorage`
+## Fitur v2
+- PWA: installable, manifest, service worker, offline cache, splash/icon ready
+- Prediksi siklus haid, masa subur, dan ovulasi
+- Mood tracker & symptom tracker
+- Qamara AI Agent: local fallback + optional backend AI endpoint
+- Cloud sync opsional via Supabase
+- Premium demo ala Flo: insights, health report export, pregnancy/care placeholder
+- Footer khusus Sarah
 
-## Cara Jalankan
-```bash
-npm install
-npm run dev
-```
-
-## Build Production
+## Deploy Vercel
+Build command:
 ```bash
 npm run build
 ```
+Output directory:
+```bash
+dist
+```
 
-## Catatan Medis & Privasi
-Qamara AI di MVP ini hanya edukatif, bukan diagnosis medis. Untuk produksi, tambahkan privacy policy, consent, enkripsi, backup aman, dan validasi medis.
+## Environment Variables Opsional
+Copy `.env.example`, lalu isi di Vercel:
 
-## Integrasi AI API Opsional
-File `src/main.jsx` saat ini memakai AI lokal. Untuk versi produksi, buat backend kecil yang menyimpan API key di server, bukan di frontend.
+```bash
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+VITE_QAMARA_AI_ENDPOINT=
+```
+
+Catatan: jangan taruh OpenAI secret key langsung di frontend. Gunakan backend/proxy sendiri untuk `VITE_QAMARA_AI_ENDPOINT`.
+
+## Supabase
+Jalankan `SUPABASE_SETUP.sql` di Supabase SQL Editor, lalu isi env di Vercel.
+
+## Disclaimer
+Qamara AI bersifat edukatif dan bukan pengganti dokter, bidan, atau tenaga medis.
